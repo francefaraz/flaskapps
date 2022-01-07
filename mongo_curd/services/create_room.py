@@ -1,8 +1,19 @@
 def create_room(db, req):
     print(req)
-    data = {"username": req['username'], "password": req['password']}
-    res = db.insert_one(data)
+    data = {
+        "roomId": req['roomId'],
+        "roomPassword": req['roomPassword'],
+        "roomName": req['roomName'],
+        "ytUrl": req['ytUrl'],
+        "map": req['map'],
+        "mode": req['mode'],
+        "matchtime": req['matchtime']
+    }
+    # if req['roomId'].isdigit() and req['roomz']:
+    #
 
-    print("done inserting of data ", res)
-    res = "inserted"
+    res = db.insert_one(data)
     return res
+
+
+#

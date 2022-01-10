@@ -1,4 +1,4 @@
 Flask==2.0.2
-pymongo[srv]
+pymongo
 Flask-PyMongo
 Flask-Cors==3.0.10

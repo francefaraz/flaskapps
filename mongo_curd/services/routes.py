@@ -3,6 +3,7 @@ from flask_cors import CORS, cross_origin
 from services.db import mydb
 import services.create_room
 import json
+# from munch import munchify
 
 app = Flask(__name__)
 
@@ -21,3 +22,16 @@ def create_room1():
     response = services.create_room.create_room(mydb, data)
     print("Room created", response)
     return response
+
+@app.route("/display",methods=['GET'])
+@cross_origin(origin="*")
+def display1():
+    print("entering in display method")
+    a=services.create_room.display(mydb)
+    # print(a)
+    # print(type(a))
+    # # b=munchify(a)
+    # # b=json.loads(a)
+    # # print("b",type(b))
+    return str(a['x'])
+

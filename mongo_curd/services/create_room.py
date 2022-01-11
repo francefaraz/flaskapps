@@ -1,3 +1,4 @@
+import json
 def create_room(db, req):
     print(req)
     # data = {
@@ -28,3 +29,27 @@ def create_room(db, req):
 
 
 #
+
+
+
+def display(db):
+    res=db.find({})
+    x=[]
+    print("res is ",res)
+    for i in res:
+        print("data is ",i['_id'])
+        x.append(i)
+        print(i)
+        
+    print(res.collection)
+    # res=list(res)
+    print("start suresh",type(x))
+    # print(dir(res))
+    print(str(x))
+    # x=str(x)
+ 
+    return {
+        'value':'1',
+        'x':x
+    }
+

@@ -4,6 +4,7 @@ from services.db import mydb
 import services.create_room
 import json
 # from munch import munchify
+from bson.json_util import dumps
 
 app = Flask(__name__)
 
@@ -33,5 +34,8 @@ def display1():
     # # b=munchify(a)
     # # b=json.loads(a)
     # # print("b",type(b))
-    return str(a['x'])
+    to_json = dumps(a['x'])
+    # print("to_json",to_json)
+    print(type(to_json),"data is ")
+    return to_json
 

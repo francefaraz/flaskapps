@@ -5,20 +5,20 @@ def create_room(db, req):
     #     "roomId": req['roomId'],
     #     "roomPassword": req['roomPassword'],
     #     "roomName": req['roomName'],
-    #     # "ytUrl": req.get('ytUrl',"hello"),
+    #     # "ytUrl": req.get('ytUrl',"https://youtu.be/qq3pVACFVho"),
     #     "map": req['map'],
     #     "mode": req['mode'],
     #     "matchtime": req['matchtime']
     # }
 
     data = {
-            "roomId": req['room_id'],
-            "roomPassword": req['room_password'],
-            "roomName": req['room_name'],
+            "roomId": req['roomId'],
+            "roomPassword": req['roomPassword'],
+            "roomName": req['roomName'],
             "ytUrl": req.get('ytUrl', "https://youtu.be/qq3pVACFVho"),
             "map": req['map'],
             "mode": req.get('mode', "fullmap"),
-            "matchtime": req['match_time']
+            "matchtime": req['matchtime']
             }
     # if req['roomId'].isdigit() and req['roomz']:
     #
@@ -35,17 +35,17 @@ def create_room(db, req):
 def display(db):
     res=db.find({})
     x=[]
-    print("res is ",res)
+    # print("res is ",res)
     for i in res:
-        print("data is ",i['_id'])
+        # print("data is ",i['_id'])
         x.append(i)
-        print(i)
+    #     print(i)
         
     print(res.collection)
     # res=list(res)
     print("start suresh",type(x))
     # print(dir(res))
-    print(str(x))
+    # print(str(x))
     # x=str(x)
  
     return {
